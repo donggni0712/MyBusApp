@@ -1,6 +1,5 @@
 package MyBusApp.api;
 
-import MyBusApp.domain.BusArrivalItem;
 import MyBusApp.domain.BusArrivalList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
