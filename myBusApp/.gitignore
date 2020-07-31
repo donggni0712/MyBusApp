@@ -18,7 +18,7 @@ target/
 *.iws
 *.iml
 *.ipr
-.env
+/src/main/java/MyBusApp/dotenv.java
 
 ### NetBeans ###
 /nbproject/private/

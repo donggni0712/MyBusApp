@@ -1,11 +1,16 @@
 package MyBusApp.api;
 
-import lombok.Data;
+import MyBusApp.dotenv;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class ApikeyManager {
+
+    @Autowired
+    dotenv env = new dotenv();
+
     public String getapikey(){
-        return "test";
+        return env.getApikey();
     }
 }
