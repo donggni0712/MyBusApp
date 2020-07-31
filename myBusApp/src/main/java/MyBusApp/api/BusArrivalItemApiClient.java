@@ -9,10 +9,13 @@ import org.springframework.web.client.RestTemplate;
 public class BusArrivalItemApiClient {
     @Autowired
     RestTemplate restTemplate = new RestTemplate();
+    @Autowired
+    ApikeyManager apikeyManager = new ApikeyManager();
 
     private String BUSARRIVALITEM_REQUEST_URI = "https://www.data.go.kr/iim/api/getBusArrivalItem?serviceKey={apiKey}&stationId={stationId}&routeId={routeId}&staOrder={staOrder}";
 
-    public BusArrivalItem getBusArrivalItem(int stationId, int routeId, int staOrder,String apikey){
+    public BusArrivalItem getBusArrivalItem(int stationId, int routeId, int staOrder){
+        String apikey = apikeyManager.getapikey();
         BusArrivalItem busArrivalItem = restTemplate.getForObject(BUSARRIVALITEM_REQUEST_URI,BusArrivalItem.class,apikey,stationId,routeId,staOrder);
         return busArrivalItem;
     }
